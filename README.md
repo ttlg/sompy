@@ -30,5 +30,5 @@ a numpy based SOM (Self Organizing Map) Library
 
 
 ## License
-[MIT](http://b4b4r07.mit-license.org)
+MIT
 
