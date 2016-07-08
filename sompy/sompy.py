@@ -1,13 +1,13 @@
 import numpy as np
 from numpy import random as rand
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
 
 
 class SOM:
     def __init__(self, shape, input_data):
         assert isinstance(shape, (int, list, tuple))
         assert isinstance(input_data, (list, np.ndarray))
+        if isinstance(shape, int):
+            shape = [shape]
         if isinstance(input_data, list):
             input_data = np.array(input_data, dtype=np.float32)
         input_shape = tuple(input_data.shape)
@@ -75,40 +75,4 @@ class SOM:
         #return self.output_layer.reshape(self.shape + (self.input_dim,))
         return self.output_layer.reshape((self.shape[1], self.shape[0], self.input_dim))
 
-if __name__ == '__main__':
-#    data = np.array([[0, 0, 0], [1, 1, 1]])
-#    som = SOM((10, 10), data)
-#    map = som.train(20)
-#    #print map
-#    plt.imshow(map)
-#    plt.show()
-    N = 30
-    #input = np.random.rand(10000, 3)
-    #input = [[0,1,0],[1,0,0],[0,0,1],[1,1,0],[0,1,1],[1,0,1]]
-    inpt = [[0,0,0],[0.1,0.1,0.1],[0.05,0.05,0.05],[0,1,0],[0.95,0.95,0.95],[1,1,1],[0.9,0.9,0.9]]
-    som = SOM((N, N), inpt)
-    som.set_parameter()
-    #p = plt.imshow(map0, interpolation='none')
-    ims = []
-#    w = cv2.VideoWriter('/home/yota/Pictures/output.avi', cv2.VideoWriter_fourcc('I', '4', '2', '0'), 30, (N, N))
-    for i in range(1000):
-        m = som.train(10)
-        img = np.array(m.tolist(), dtype=np.uint8)
-#        w.write(img)
-        im = plt.imshow(m.tolist(), interpolation='none')#, animated=True)
-        ims.append([im])
-#    w.release()
-    fig = plt.figure()
-    ani = animation.ArtistAnimation(fig, ims, interval=100, blit=True, repeat_delay=1000)
-#    ani.save('/home/yota/Pictures/dynamic_images.mp4')
-#    ani.save('dynamic_images.mp4')
-#    plt.subplot(2, 2, 1)
-#    plt.imshow(map0, interpolation='none')
-#    plt.subplot(2, 2, 2)
-#    plt.imshow(map1, interpolation='none')
-#    plt.subplot(2, 2, 3)
-#    plt.imshow(map2, interpolation='none')
-#    plt.subplot(2, 2, 4)
-#    plt.imshow(map3, interpolation='none')
-    plt.show()
 
