@@ -4,7 +4,13 @@ a numpy based SOM (Self Organizing Map) Library
 
 ## Description
 
-### Demo
+## Requirement
++ Python2
+
+## Install 
+    pip install sompy
+    
+## Demo
     from sompy import SOM
     import numpy as np
     import matplotlib.pyplot as plt
@@ -22,17 +28,7 @@ a numpy based SOM (Self Organizing Map) Library
     plt.show()
 ![alt tag](https://github.com/ttlg/sompy/blob/master/examples/sample_color.png)
 
-## Requirement
-+ Python2
-
-
-## Install 
-    pip install sompy
-
-
 
 ## License
 [MIT](http://b4b4r07.mit-license.org)
-
-
 
