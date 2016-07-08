@@ -1,2 +1,1 @@
-
 from sompy import SOM
