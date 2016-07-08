@@ -5,7 +5,7 @@ numpy based SOM (Self Organizing Map) Library
 ## Description
 
 ### Demo
-![alt tag](https://raw.githubusercontent.com/ttlg/sompy/origin/examples/sample_color.png)
+![alt tag](https://github.com/ttlg/sompy/blob/master/examples/sample_color.png)
 
 ## Requirement
 + Python2
