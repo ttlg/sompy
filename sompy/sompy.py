@@ -66,8 +66,10 @@ class SOM:
         initial = max(self.shape) * self._param_neighbor
         return initial*np.exp(-t/self._life)
 
-    def train(self, n):
-        for i in range(n):
+    def train(self, iterate=None):
+        if not iterate:
+            iterate = self.input_num
+        for i in range(iterate):
             r = rand.randint(0, self.input_num)
             data = self.input_layer[r]
             win_idx = self._get_winner_node(data)
