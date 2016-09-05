@@ -1,5 +1,5 @@
 # sompy
-a numpy based SOM (Self Organizing Map) Library
+numpy based SOM (Self Organizing Map) Library
 
 
 ## Description
